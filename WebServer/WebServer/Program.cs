@@ -13,8 +13,7 @@ namespace WebServer
         {
             HttpListener listener = new HttpListener();
             string index = "http://*:8881/";
-            listener.Prefixes.Add(index);
-            Vote vote = new Vote();
+            listener.Prefixes.Add(index);            
             IndexConroller homeconroller = new IndexConroller();
             VoteConroller voteConroller = new VoteConroller();
             ParticipantsConroller participantsConroller = new ParticipantsConroller();
@@ -35,7 +34,7 @@ namespace WebServer
                 }
                 else if (request.RawUrl.Contains("/vote.html"))
                 {
-                    voteConroller.Handle(response);                  
+                    voteConroller.Handle(response,request);                  
                 }
                 else
                 {

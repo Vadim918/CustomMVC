@@ -1,43 +1,23 @@
 ﻿using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.IO;
-
+using WebServer.Models;
 
 namespace WebServer.Model
 {
-  class JsonData
-    {
-       public override string ToString()
-        {
-            return ($"Приглашённые на вееринку:{string.Join("\n", Users.ToArray())}");
-        }
-
-        public List<string> Users { get;  set; }
-     
-        private object DataObject()
-        {
-            JsonData json = new JsonData()
-            {
-                Users = new List<string>
-                {
-                    "Oleg",
-                    "Vadim",
-                    "Sasha",
-                    "Dima",
-                    "James",
-                }
-            };
-            return json;
-        }
+   class JsonData : Json
+  {    
         public string JsonALL()
-        {
-            var json = DataObject();
-            string create = JsonConvert.SerializeObject(json);
-            File.WriteAllText(@"participants.json", create);
-           var jsonFile = File.ReadAllText(@"participants.json");
-            JsonData resultJson = JsonConvert.DeserializeObject<JsonData>(jsonFile);
+        {   
+            Json resultJson = JsonConvert.DeserializeObject<Json>(File.ReadAllText(@"participants.json"));
             string content = resultJson.ToString();
             return content;
+        }
+        public void Save(string newUser)
+        {
+            var json =  JsonConvert.DeserializeObject<Json>(File.ReadAllText("participants.json"));
+            json.Users.Add(newUser);
+            File.WriteAllText(@"participants.json", JsonConvert.SerializeObject(json));  
+           
         }
     }
 }

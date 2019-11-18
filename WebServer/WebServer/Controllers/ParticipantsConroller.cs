@@ -14,8 +14,7 @@ namespace WebServer.Controllers
             response.ContentLength64 = buffer.Length;
             Stream output = response.OutputStream;
             output.Write(buffer, 0, buffer.Length);
-            output.Close();
-            
+            output.Close();            
         }
     }
 }

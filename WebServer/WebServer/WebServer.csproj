@@ -49,10 +49,10 @@
     <Compile Include="Controllers\IndexConroller.cs" />
     <Compile Include="Controllers\ParticipantsConroller.cs" />
     <Compile Include="Controllers\VoteConroller.cs" />
+    <Compile Include="Models\Json.cs" />
     <Compile Include="Models\JsonData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vote.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
