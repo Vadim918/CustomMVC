@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Хэлоуин</title>
+</head>
+<body>
+    <h1>Хэллоуин</h1>
+
+    <a href="participants.html">Cписок участников вечереники</a>
+    <p>
+        <script>
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'participants.html', false);
+            xhr.send();
+            if (xhr.status == 200)
+            {
+                document.write(xhr.responseText);
+            }
+        </script>
+    </p>
+</body>
+</html> 

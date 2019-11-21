@@ -15,7 +15,7 @@ namespace WebServer.Controllers
             string pairs;
                 if (request.HttpMethod == "GET")
                 {
-                    using (StreamReader fstream = new StreamReader(@"vote.html"))
+                    using (StreamReader fstream = new StreamReader(@"D:\ASP.NET\CustomMVC\WebServer\WebServer\Files\vote.html"))
                     {
                         string content = fstream.ReadToEnd();
                         byte[] buffer = Encoding.UTF8.GetBytes(content);

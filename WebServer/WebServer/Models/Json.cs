@@ -11,7 +11,7 @@ namespace WebServer.Models
 
         public override string ToString()
         {
-            return ($"Приглашённые на вееринку:{string.Join("\n", Users.ToArray())}");
+            return ($"List going to the event:{string.Join("\n",Users.ToArray())}");
         }
 
         public List<string> Users { get; set; }

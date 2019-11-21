@@ -9,7 +9,7 @@ namespace WebServer.Controllers
     {
         public void Handle(HttpListenerResponse response)
         {
-            using (StreamReader fstream = new StreamReader(@"index.html"))
+            using (StreamReader fstream = new StreamReader(@"D:\ASP.NET\CustomMVC\WebServer\WebServer\Files\index.html"))
             {
                 string content = fstream.ReadToEnd();
                 byte[] buffer = Encoding.UTF8.GetBytes(content);
