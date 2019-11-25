@@ -29,7 +29,7 @@ namespace WebServer
 
                 if (request.RawUrl.Contains("/participants.html"))
                 {
-                    participantsConroller.Handle(response);
+                    participantsConroller.Handle(context);
                    
                 }
                 else if (request.RawUrl.Contains("/vote.html"))
